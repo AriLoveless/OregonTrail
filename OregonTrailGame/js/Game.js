@@ -12,8 +12,10 @@ OregonTrail.FULL_SPEED = 5;
 OregonTrail.SLOW_SPEED = 3;
 OregonTrail.FINAL_DISTANCE = 1000;
 OregonTrail.EVENT_PROBABILITY = 0.15;
+//This is the probablility of a random event happening
 OregonTrail.ENEMY_FIREPOWER_AVG = 5;
 OregonTrail.ENEMY_GOLD_AVG = 50;
+//This block sets all of the variables, these can be changed to make the game harder or easier
 
 OregonTrail.Game = {};
 //the game object will take care of the main game aspects like game starting, pausing, and the time steps
@@ -22,12 +24,15 @@ OregonTrail.Game = {};
 OregonTrail.Game.init = function(){
 
   //reference ui
+  //Links to ui.js
   this.ui = OregonTrail.UI;
 
   //reference event manager
+  //Links to Event.js
   this.eventManager = OregonTrail.Event;
 
   //setup caravan
+  //Initiates all of the variables for the players caravan
   this.caravan = OregonTrail.Caravan;
   this.caravan.init({
     day: 0,
@@ -119,7 +124,7 @@ OregonTrail.Game.updateGame = function() {
 
   //check win game
   if(this.caravan.distance >= OregonTrail.FINAL_DISTANCE) {
-    this.ui.notify('You have returned home!', 'positive');
+    this.ui.notify('You have made it to the west!', 'positive');
     this.gameActive = false;
     return;
   }

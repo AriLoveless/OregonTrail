@@ -21,6 +21,7 @@ OregonTrail.UI.refreshStats = function() {
 
   //update caravan position
   document.getElementById('caravan').style.left = (380 * this.caravan.distance/OregonTrail.FINAL_DISTANCE) + 'px';
+  //This updates the position of the caravan image on the trees image. This is calculated in pixels
 };
 
 //show shop
@@ -150,7 +151,7 @@ OregonTrail.UI.fight = function(){
   this.game.resumeJourney();
 };
 
-//runing away from enemy
+//running away from enemy
 OregonTrail.UI.runaway = function(){
 
   var firepower = this.firepower;
